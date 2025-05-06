@@ -9,12 +9,12 @@ import org.apache.kafka.common.serialization.StringSerializer
 import java.util.*
 
 fun main() {
-    val bootstrapServers = "192.168.1.65:9092"
+    val bootstrapServers = "localhost:9092"
 
-    val topicCount = 1             // Number of topics to create
-    val partitionsPerTopic = 20       // Number of partitions per topic
-    val messagesPerPartition = 100    // Number of messages per partition
-    val messageSizeBytes = 1_000_000       // Size of each message in bytes
+    val topicCount = 11
+    val partitionsPerTopic = 20
+    val messagesPerPartition = 100
+    val messageSizeBytes = 1_000_000
 
     createKafkaTopics(bootstrapServers, topicCount, partitionsPerTopic)
     produceKafkaMessages(
