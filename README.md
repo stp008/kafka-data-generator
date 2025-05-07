@@ -23,7 +23,6 @@ It uses the official Kafka client and is built with **Maven**.
 ### 🧱 Requirements
 
 * Java 17+
-* Maven 3.6+
 * Apache Kafka (running on `localhost:9092` by default)
 * Kotlin 1.9+
 
@@ -33,21 +32,16 @@ It uses the official Kafka client and is built with **Maven**.
 
 ```
 .
-├── pom.xml
-└── src/
-    └── main/
-        └── kotlin/
-            └── com/
-                └── stp008/
-                    └── kafka/
-                        └── DataGenerator.kt
+├── README.md
+└── scripts/
+        └── kafka-data-generator.main.kts
 ```
 
 ---
 
 ### ⚙️ Configuration
 
-Inside `DataGenerator.kt`, modify the following variables to suit your needs:
+Inside `kafka-data-generator.main.kts`, modify the following variables to suit your needs:
 
 ```kotlin
 val topicCount = 5               // Number of topics to create
@@ -69,14 +63,8 @@ Change this if your Kafka broker is elsewhere.
 ### 🛠️ Build and Run
 
 ```bash
-# Compile the project
-mvn compile
-
-# Run the app
-mvn exec:java
+kotlinc -script scripts/kafka-data-generator.main.kts
 ```
-
-> If you change the package or main class name, update the `<mainClass>` in the `exec-maven-plugin` section of `pom.xml`.
 
 ---
 
